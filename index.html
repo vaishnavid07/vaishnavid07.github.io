@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vaishnavi Deshmukh | Portfolio</title>
+<style>
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background: #fefefe;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: linear-gradient(45deg, #5a86ff, #a879f4);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  background: #333;
+}
+
+nav a {
+  color: white;
+  padding: 1rem;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background: #555;
+}
+
+section {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+h2 {
+  color: #5a86ff;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 0.5rem;
+}
+
+ul {
+  list-style: square;
+  padding-left: 1.5rem;
+}
+
+footer {
+  text-align: center;
+  background: #f0f0f0;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+</style>
+</head>
+<body>
+  <header>
+    <h1>Vaishnavi Deshmukh</h1>
+    <p>Web Developer | AI & ML Enthusiast | Cloud Explorer</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I'm a passionate developer with experience in full-stack web development and a strong foundation in AI & ML. My mission is to build innovative solutions and grow professionally in challenging environments.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <ul>
+      <li>HTML, CSS, JavaScript, PHP, MySQL</li>
+      <li>Python, Java, REST API, MVC Architecture</li>
+      <li>AI & Machine Learning, Cloud Computing</li>
+    </ul>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <h3>Techhomage Technologies (Nov 2024 – Present)</h3>
+    <p>Worked on CI3/CI4 frameworks, developed ERP/CRM systems, and collaborated on food delivery and e-commerce apps.</p>
+
+    <h3>Clocktos Infotech (Feb 2023 – Aug 2023)</h3>
+    <p>Upgraded ERP system using ASP.NET, created responsive UI, and documented system for onboarding.</p>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <ul>
+      <li><strong>B.Tech CSE (AI & ML)</strong>, MIT Aurangabad – CGPA: 9.40</li>
+      <li><strong>HSC</strong>, Deogiri College – 60%</li>
+      <li><strong>SSC</strong>, Anant Bhalerao Vidya Mandir – 87.8%</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <h3>DigiPark</h3>
+    <p>QR code-based contactless parking system. Role: Team Leader (Backend)</p>
+
+    <h3>Brahmastra - No More Anonymity</h3>
+    <p>Web app to detect VPN/proxy and scan ports. Role: Backend Developer & Team Leader</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:vaishnavi.deshmukh201@gmail.com">vaishnavi.deshmukh201@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/vaishnavi-deshmukh-352881212/">Profile</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Vaishnavi Deshmukh</p>
+  </footer>
+
+  <script>
+// Smooth scroll for navigation
+document.querySelectorAll('nav a').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const section = document.querySelector(this.getAttribute('href'));
+    section.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+  </script>
+    
+</body>
+</html>
