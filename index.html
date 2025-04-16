@@ -3,146 +3,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vaishnavi Deshmukh | Portfolio</title>
-<style>
-body {
-  font-family: 'Segoe UI', sans-serif;
-  line-height: 1.6;
-  background: #fefefe;
-  color: #333;
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  background: linear-gradient(45deg, #5a86ff, #a879f4);
-  color: white;
-  text-align: center;
-  padding: 2rem;
-}
-
-nav {
-  display: flex;
-  justify-content: center;
-  background: #333;
-}
-
-nav a {
-  color: white;
-  padding: 1rem;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-
-nav a:hover {
-  background: #555;
-}
-
-section {
-  padding: 2rem;
-  max-width: 900px;
-  margin: auto;
-}
-
-h2 {
-  color: #5a86ff;
-  border-bottom: 2px solid #ddd;
-  padding-bottom: 0.5rem;
-}
-
-ul {
-  list-style: square;
-  padding-left: 1.5rem;
-}
-
-footer {
-  text-align: center;
-  background: #f0f0f0;
-  padding: 1rem;
-  margin-top: 2rem;
-}
-
-</style>
+  <title>Vaishnavi | Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: linear-gradient(to right, #f8fafc, #e0f2fe);
+    }
+    .glow:hover {
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+    }
+  </style>
 </head>
-<body>
-  <header>
-    <h1>Vaishnavi Deshmukh</h1>
-    <p>Web Developer | AI & ML Enthusiast | Cloud Explorer</p>
+<body class="font-sans text-gray-800">
+  <header class="flex items-center justify-between px-6 py-4 bg-white shadow-md sticky top-0 z-50">
+    <h1 class="text-2xl font-bold text-blue-600">Vaishnavi</h1>
+    <nav class="space-x-6 text-gray-600 font-medium">
+      <a href="#projects" class="hover:text-blue-500">Projects</a>
+      <a href="#skills" class="hover:text-blue-500">Skills</a>
+      <a href="#contact" class="hover:text-blue-500">Contact</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#experience">Experience</a>
-    <a href="#education">Education</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I'm a passionate developer with experience in full-stack web development and a strong foundation in AI & ML. My mission is to build innovative solutions and grow professionally in challenging environments.
-    </p>
+  <section class="min-h-screen flex items-center justify-center text-center">
+    <div>
+      <h2 class="text-4xl md:text-6xl font-extrabold mb-4 animate-fade">Hello, I'm <span class="text-blue-600">Vaishnavi</span></h2>
+      <p class="text-lg md:text-xl text-gray-700">Web Developer | Laravel Enthusiast | UI Designer</p>
+      <button class="mt-6 px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 glow transition">View My Work</button>
+    </div>
   </section>
 
-  <section id="skills">
-    <h2>Technical Skills</h2>
-    <ul>
-      <li>HTML, CSS, JavaScript, PHP, MySQL</li>
-      <li>Python, Java, REST API, MVC Architecture</li>
-      <li>AI & Machine Learning, Cloud Computing</li>
-    </ul>
+  <section id="projects" class="px-6 py-12 bg-white">
+    <h3 class="text-3xl font-bold text-center text-blue-600 mb-10">Projects</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-gray-100 p-6 rounded-xl shadow-lg hover:scale-105 transition transform">
+        <h4 class="text-xl font-semibold mb-2">Inventory Manager</h4>
+        <p class="text-sm">A PHP-Laravel system to manage raw and finished goods stock with validations and reports.</p>
+      </div>
+      <div class="bg-gray-100 p-6 rounded-xl shadow-lg hover:scale-105 transition transform">
+        <h4 class="text-xl font-semibold mb-2">Punch In/Out App</h4>
+        <p class="text-sm">A hybrid Laravel + JS solution for employee punch-ins using AJAX and modals.</p>
+      </div>
+      <div class="bg-gray-100 p-6 rounded-xl shadow-lg hover:scale-105 transition transform">
+        <h4 class="text-xl font-semibold mb-2">Portfolio Website</h4>
+        <p class="text-sm">A custom-built Tailwind CSS portfolio hosted on GitHub Pages.</p>
+      </div>
+    </div>
   </section>
 
-  <section id="experience">
-    <h2>Experience</h2>
-    <h3>Techhomage Technologies (Nov 2024 – Present)</h3>
-    <p>Worked on CI3/CI4 frameworks, developed ERP/CRM systems, and collaborated on food delivery and e-commerce apps.</p>
-
-    <h3>Clocktos Infotech (Feb 2023 – Aug 2023)</h3>
-    <p>Upgraded ERP system using ASP.NET, created responsive UI, and documented system for onboarding.</p>
+  <section id="skills" class="px-6 py-12 bg-blue-50">
+    <h3 class="text-3xl font-bold text-center text-blue-600 mb-10">Skills</h3>
+    <div class="flex flex-wrap justify-center gap-4">
+      <span class="bg-blue-100 px-4 py-2 rounded-full text-blue-700 font-semibold">PHP</span>
+      <span class="bg-blue-100 px-4 py-2 rounded-full text-blue-700 font-semibold">Laravel</span>
+      <span class="bg-blue-100 px-4 py-2 rounded-full text-blue-700 font-semibold">JavaScript</span>
+      <span class="bg-blue-100 px-4 py-2 rounded-full text-blue-700 font-semibold">Tailwind CSS</span>
+      <span class="bg-blue-100 px-4 py-2 rounded-full text-blue-700 font-semibold">MySQL</span>
+    </div>
   </section>
 
-  <section id="education">
-    <h2>Education</h2>
-    <ul>
-      <li><strong>B.Tech CSE (AI & ML)</strong>, MIT Aurangabad – CGPA: 9.40</li>
-      <li><strong>HSC</strong>, Deogiri College – 60%</li>
-      <li><strong>SSC</strong>, Anant Bhalerao Vidya Mandir – 87.8%</li>
-    </ul>
+  <section id="contact" class="px-6 py-12 bg-white text-center">
+    <h3 class="text-3xl font-bold text-blue-600 mb-6">Get in Touch</h3>
+    <p class="mb-6 text-gray-700">Let's connect! You can find me on:</p>
+    <div class="space-x-4">
+      <a href="https://github.com/vaishnavid07" target="_blank" class="text-blue-600 hover:underline">GitHub</a>
+      <a href="mailto:vaishnavid07@example.com" class="text-blue-600 hover:underline">Email</a>
+    </div>
   </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <h3>DigiPark</h3>
-    <p>QR code-based contactless parking system. Role: Team Leader (Backend)</p>
-
-    <h3>Brahmastra - No More Anonymity</h3>
-    <p>Web app to detect VPN/proxy and scan ports. Role: Backend Developer & Team Leader</p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:vaishnavi.deshmukh201@gmail.com">vaishnavi.deshmukh201@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/vaishnavi-deshmukh-352881212/">Profile</a></p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Vaishnavi Deshmukh</p>
+  <footer class="text-center py-6 text-sm text-gray-500 bg-blue-50">
+    © 2025 Vaishnavi Gajanan Deshmukh
   </footer>
 
   <script>
-// Smooth scroll for navigation
-document.querySelectorAll('nav a').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const section = document.querySelector(this.getAttribute('href'));
-    section.scrollIntoView({ behavior: 'smooth' });
-  });
-});
-
+    // Fade animation on scroll
+    const fadeElements = document.querySelectorAll(".animate-fade");
+    window.addEventListener("scroll", () => {
+      fadeElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+          el.classList.add("opacity-100", "translate-y-0");
+        }
+      });
+    });
   </script>
-    
 </body>
 </html>
