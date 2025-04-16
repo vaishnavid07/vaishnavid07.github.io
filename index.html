@@ -7,18 +7,19 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
-      background: linear-gradient(to right, #f8fafc, #e0f2fe);
+      background: linear-gradient(to right, #f0f4f8, #dbeafe);
     }
     .glow:hover {
-      box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+      box-shadow: 0 0 20px rgba(96, 165, 250, 0.5);
     }
   </style>
 </head>
 <body class="font-sans text-gray-800">
   <header class="flex items-center justify-between px-6 py-4 bg-white shadow-md sticky top-0 z-50">
-    <h1 class="text-2xl font-bold text-blue-600">Vaishnavi</h1>
-    <nav class="space-x-6 text-gray-600 font-medium">
+    <h1 class="text-2xl font-bold text-blue-600">Vaishnavi Deshmukh</h1>
+    <nav class="space-x-6 text-gray-700 font-medium">
       <a href="#projects" class="hover:text-blue-500">Projects</a>
+      <a href="#experience" class="hover:text-blue-500">Experience</a>
       <a href="#skills" class="hover:text-blue-500">Skills</a>
       <a href="#contact" class="hover:text-blue-500">Contact</a>
     </nav>
@@ -26,56 +27,79 @@
 
   <section class="min-h-screen flex items-center justify-center text-center">
     <div>
-      <h2 class="text-4xl md:text-6xl font-extrabold mb-4 animate-fade">Hello, I'm <span class="text-blue-600">Vaishnavi</span></h2>
-      <p class="text-lg md:text-xl text-gray-700">Web Developer | Laravel Enthusiast | UI Designer</p>
-      <button class="mt-6 px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 glow transition">View My Work</button>
+      <h2 class="text-4xl md:text-6xl font-extrabold mb-4 animate-fade">Hi, I'm <span class="text-blue-600">Vaishnavi Deshmukh</span></h2>
+      <p class="text-lg md:text-xl text-gray-700">Web Developer | Laravel Enthusiast | AI/ML Explorer</p>
+      <p class="mt-4 text-sm max-w-xl mx-auto">To leverage my technical expertise in web development, AI/ML, and cloud computing to design innovative solutions and contribute to organizational success.</p>
+      <button class="mt-6 px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 glow transition">Explore Portfolio</button>
     </div>
   </section>
 
-  <section id="projects" class="px-6 py-12 bg-white">
-    <h3 class="text-3xl font-bold text-center text-blue-600 mb-10">Projects</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="bg-gray-100 p-6 rounded-xl shadow-lg hover:scale-105 transition transform">
-        <h4 class="text-xl font-semibold mb-2">Inventory Manager</h4>
-        <p class="text-sm">A PHP-Laravel system to manage raw and finished goods stock with validations and reports.</p>
+  <section id="experience" class="px-6 py-12 bg-white">
+    <h3 class="text-3xl font-bold text-blue-600 text-center mb-10">Professional Experience</h3>
+    <div class="space-y-8">
+      <div>
+        <h4 class="text-xl font-semibold">Techhomage Technologies <span class="text-sm text-gray-500">(Nov 2024 – Present)</span></h4>
+        <ul class="list-disc list-inside text-sm text-gray-700">
+          <li>Developed web applications using Laravel, CodeIgniter 3 & 4.</li>
+          <li>Built REST APIs and ERP/CRM models for manufacturing clients.</li>
+          <li>Worked on diverse projects including Food Delivery & E-Commerce apps.</li>
+        </ul>
       </div>
-      <div class="bg-gray-100 p-6 rounded-xl shadow-lg hover:scale-105 transition transform">
-        <h4 class="text-xl font-semibold mb-2">Punch In/Out App</h4>
-        <p class="text-sm">A hybrid Laravel + JS solution for employee punch-ins using AJAX and modals.</p>
-      </div>
-      <div class="bg-gray-100 p-6 rounded-xl shadow-lg hover:scale-105 transition transform">
-        <h4 class="text-xl font-semibold mb-2">Portfolio Website</h4>
-        <p class="text-sm">A custom-built Tailwind CSS portfolio hosted on GitHub Pages.</p>
+      <div>
+        <h4 class="text-xl font-semibold">Clocktos Infotech <span class="text-sm text-gray-500">(Feb 2023 – Aug 2023)</span></h4>
+        <ul class="list-disc list-inside text-sm text-gray-700">
+          <li>Upgraded ERP system using HTML, CSS, JS, ASP.NET.</li>
+          <li>Led frontend development and training sessions for new team members.</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <section id="skills" class="px-6 py-12 bg-blue-50">
-    <h3 class="text-3xl font-bold text-center text-blue-600 mb-10">Skills</h3>
-    <div class="flex flex-wrap justify-center gap-4">
+  <section id="projects" class="px-6 py-12 bg-blue-50">
+    <h3 class="text-3xl font-bold text-blue-600 text-center mb-10">Projects</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="bg-white p-6 rounded-xl shadow-lg hover:scale-105 transition">
+        <h4 class="text-xl font-semibold mb-2">DigiPark</h4>
+        <p class="text-sm">Digitized parking system with QR verification for contactless access. Led backend development and team coordination.</p>
+        <p class="text-xs mt-1 text-gray-500">Tech: PHP, JS, HTML, MySQL</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-lg hover:scale-105 transition">
+        <h4 class="text-xl font-semibold mb-2">Brahmastra - No More Anonymity</h4>
+        <p class="text-sm">Network security tool to detect VPN/proxy usage and scan ports. Led backend dev with Flask.</p>
+        <p class="text-xs mt-1 text-gray-500">Tech: Python, Flask, MySQL</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="px-6 py-12 bg-white">
+    <h3 class="text-3xl font-bold text-blue-600 text-center mb-10">Skills & Certifications</h3>
+    <div class="flex flex-wrap justify-center gap-3 mb-8">
       <span class="bg-blue-100 px-4 py-2 rounded-full text-blue-700 font-semibold">PHP</span>
       <span class="bg-blue-100 px-4 py-2 rounded-full text-blue-700 font-semibold">Laravel</span>
       <span class="bg-blue-100 px-4 py-2 rounded-full text-blue-700 font-semibold">JavaScript</span>
-      <span class="bg-blue-100 px-4 py-2 rounded-full text-blue-700 font-semibold">Tailwind CSS</span>
+      <span class="bg-blue-100 px-4 py-2 rounded-full text-blue-700 font-semibold">Python</span>
       <span class="bg-blue-100 px-4 py-2 rounded-full text-blue-700 font-semibold">MySQL</span>
+      <span class="bg-blue-100 px-4 py-2 rounded-full text-blue-700 font-semibold">REST API</span>
+      <span class="bg-blue-100 px-4 py-2 rounded-full text-blue-700 font-semibold">AI/ML</span>
+    </div>
+    <p class="text-sm text-center text-gray-700">Certified in Python for Everybody, HTML5, Responsive Design & Google IT Support via Coursera</p>
+  </section>
+
+  <section id="contact" class="px-6 py-12 bg-blue-50 text-center">
+    <h3 class="text-3xl font-bold text-blue-600 mb-4">Contact Me</h3>
+    <p class="text-gray-700 mb-4">Let's connect to build something amazing!</p>
+    <div class="space-x-4 text-blue-600 font-medium">
+      <a href="mailto:vaishnavi.deshmukh201@gmail.com" class="hover:underline">Email</a>
+      <a href="https://github.com/vaishnavid07" target="_blank" class="hover:underline">GitHub</a>
+      <a href="https://www.linkedin.com/in/vaishnavi-deshmukh-352881212/" target="_blank" class="hover:underline">LinkedIn</a>
     </div>
   </section>
 
-  <section id="contact" class="px-6 py-12 bg-white text-center">
-    <h3 class="text-3xl font-bold text-blue-600 mb-6">Get in Touch</h3>
-    <p class="mb-6 text-gray-700">Let's connect! You can find me on:</p>
-    <div class="space-x-4">
-      <a href="https://github.com/vaishnavid07" target="_blank" class="text-blue-600 hover:underline">GitHub</a>
-      <a href="mailto:vaishnavid07@example.com" class="text-blue-600 hover:underline">Email</a>
-    </div>
-  </section>
-
-  <footer class="text-center py-6 text-sm text-gray-500 bg-blue-50">
-    © 2025 Vaishnavi Gajanan Deshmukh
+  <footer class="text-center py-6 text-sm text-gray-500 bg-white">
+    © 2025 Vaishnavi Gajanan Deshmukh | Based in Aurangabad, India
   </footer>
 
   <script>
-    // Fade animation on scroll
     const fadeElements = document.querySelectorAll(".animate-fade");
     window.addEventListener("scroll", () => {
       fadeElements.forEach(el => {
