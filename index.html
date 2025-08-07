@@ -1,121 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vaishnavi | Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@heroicons/vue@2.0.11/outline/index.js"></script>
   <style>
     body {
       background: linear-gradient(to right, #f0f4f8, #dbeafe);
     }
-    .glow:hover {
-      box-shadow: 0 0 20px rgba(96, 165, 250, 0.5);
+    .glass {
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
 <body class="font-sans text-gray-800">
-  <header class="flex items-center justify-between px-6 py-4 bg-white shadow-md sticky top-0 z-50">
-    <h1 class="text-2xl font-bold text-blue-600">Vaishnavi Deshmukh</h1>
-    <nav class="space-x-6 text-gray-700 font-medium">
-      <a href="#projects" class="hover:text-blue-500">Projects</a>
-      <a href="#experience" class="hover:text-blue-500">Experience</a>
-      <a href="#skills" class="hover:text-blue-500">Skills</a>
-      <a href="#contact" class="hover:text-blue-500">Contact</a>
-    </nav>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-md">
+    <div class="max-w-5xl mx-auto flex items-center justify-between py-4 px-6">
+      <h1 class="text-2xl font-bold text-blue-600">Vaishnavi D.</h1>
+      <nav class="space-x-6 text-sm font-medium text-gray-700">
+        <a href="#projects" class="hover:text-blue-500">Projects</a>
+        <a href="#experience" class="hover:text-blue-500">Experience</a>
+        <a href="#skills" class="hover:text-blue-500">Skills</a>
+        <a href="#contact" class="hover:text-blue-500">Contact</a>
+      </nav>
+    </div>
   </header>
-  <section class="min-h-screen flex items-center justify-center text-center">
-    <div>
-      <h2 class="text-4xl md:text-6xl font-extrabold mb-4 animate-fade">Hi, I'm <span class="text-blue-600">Vaishnavi Deshmukh</span></h2>
-      <p class="text-lg md:text-xl text-gray-700">Full Stack Developer | Laravel Enthusiast | AI/ML Explorer</p>
-      <p class="mt-4 text-sm max-w-xl mx-auto">To leverage my technical expertise in web development, AI/ML, and cloud computing to design innovative solutions and contribute to organizational success.</p>
 
+  <!-- Hero Section -->
+  <section class="flex items-center justify-center min-h-screen text-center px-4">
+    <div class="max-w-3xl">
+      <h2 class="text-5xl md:text-6xl font-extrabold mb-4 fade-in">Hi, I'm <span class="text-blue-600">Vaishnavi Deshmukh</span></h2>
+      <p class="text-lg text-gray-700 mb-3">Full Stack Developer | Laravel Enthusiast | AI/ML Explorer</p>
+      <p class="text-sm text-gray-600 max-w-xl mx-auto">I blend creative problem-solving with full-stack development to build secure, scalable, and modern digital experiences.</p>
     </div>
   </section>
 
-  <section id="experience" class="px-6 py-16 bg-gradient-to-r from-blue-50 to-white">
-  <h3 class="text-4xl font-extrabold text-center text-blue-700 mb-12">🚀 Professional Experience</h3>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-    <div class="bg-white p-6 rounded-xl shadow-md transition transform hover:scale-105">
-      <div class="flex items-center justify-between mb-2">
-        <h4 class="text-2xl font-bold text-blue-600">Techhomage Technologies</h4>
-        <span class="text-sm text-gray-500">Nov 2024 – Present</span>
-      </div>
-      <p class="text-sm text-gray-600 mb-4 italic">Full Stack Developer</p>
-      <ul class="list-disc pl-5 text-gray-700 space-y-1 text-sm">
-        <li>Built scalable web apps with Laravel & CodeIgniter 3/4.</li>
-        <li>Integrated RESTful APIs and built custom ERP/CRM modules.</li>
-        <li>Led projects like Food Delivery and E-Commerce platforms.</li>
-      </ul>
-    </div>
-    <div class="bg-white p-6 rounded-xl shadow-md transition transform hover:scale-105">
-      <div class="flex items-center justify-between mb-2">
-        <h4 class="text-2xl font-bold text-blue-600">Clocktos Infotech</h4>
-        <span class="text-sm text-gray-500">Feb 2023 – Aug 2023</span>
-      </div>
-      <p class="text-sm text-gray-600 mb-4 italic">Web Development Intern</p>
-      <ul class="list-disc pl-5 text-gray-700 space-y-1 text-sm">
-        <li>Revamped Educational ERP system using HTML, CSS, JS, ASP.NET.</li>
-        <li>Created responsive frontend designs and led onboarding sessions.</li>
-        <li>Delivered essential documentation for design & knowledge transfer.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-  <section id="projects" class="px-6 py-12 bg-blue-50">
-    <h3 class="text-3xl font-bold text-blue-600 text-center mb-10">Projects</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="bg-white p-6 rounded-xl shadow-lg hover:scale-105 transition">
-        <h4 class="text-xl font-semibold mb-2">DigiPark</h4>
-        <p class="text-sm">Digitized parking system with QR verification for contactless access. Led backend development and team coordination.</p>
-        <p class="text-xs mt-1 text-gray-500">Tech: PHP, JS, HTML, MySQL</p>
-      </div>
-      <div class="bg-white p-6 rounded-xl shadow-lg hover:scale-105 transition">
-        <h4 class="text-xl font-semibold mb-2">Brahmastra - No More Anonymity</h4>
-        <p class="text-sm">Network security tool to detect VPN/proxy usage and scan ports. Led backend dev with Flask.</p>
-        <p class="text-xs mt-1 text-gray-500">Tech: Python, Flask, MySQL</p>
+  <!-- Experience -->
+  <section id="experience" class="py-20 bg-gradient-to-r from-blue-50 to-white px-4">
+    <div class="max-w-5xl mx-auto text-center">
+      <h3 class="text-4xl font-bold text-blue-700 mb-10">🚀 Professional Experience</h3>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Job 1 -->
+        <div class="glass p-6 rounded-xl shadow-lg fade-in">
+          <div class="flex justify-between items-center mb-2">
+            <h4 class="text-2xl font-bold text-blue-600">Techhomage Technologies</h4>
+            <span class="text-sm text-gray-500">Nov 2024 – Present</span>
+          </div>
+          <p class="text-sm italic text-gray-600 mb-3">Full Stack Developer</p>
+          <ul class="list-disc text-sm text-left text-gray-700 pl-5 space-y-1">
+            <li>Built scalable web apps with Laravel & CodeIgniter 3/4.</li>
+            <li>Integrated RESTful APIs and built custom ERP/CRM modules.</li>
+            <li>Led projects like Food Delivery and E-Commerce platforms.</li>
+          </ul>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="glass p-6 rounded-xl shadow-lg fade-in">
+          <div class="flex justify-between items-center mb-2">
+            <h4 class="text-2xl font-bold text-blue-600">Clocktos Infotech</h4>
+            <span class="text-sm text-gray-500">Feb 2023 – Aug 2023</span>
+          </div>
+          <p class="text-sm italic text-gray-600 mb-3">Web Development Intern</p>
+          <ul class="list-disc text-sm text-left text-gray-700 pl-5 space-y-1">
+            <li>Revamped Educational ERP system with HTML, CSS, JS, ASP.NET.</li>
+            <li>Created responsive designs and led onboarding sessions.</li>
+            <li>Documented development and design knowledge.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="skills" class="px-6 py-12 bg-white">
-    <h3 class="text-3xl font-bold text-blue-600 text-center mb-10">Skills & Certifications</h3>
-    <div class="flex flex-wrap justify-center gap-3 mb-8">
-      <span class="bg-blue-100 px-4 py-2 rounded-full text-blue-700 font-semibold">PHP</span>
-      <span class="bg-blue-100 px-4 py-2 rounded-full text-blue-700 font-semibold">Laravel</span>
-      <span class="bg-blue-100 px-4 py-2 rounded-full text-blue-700 font-semibold">JavaScript</span>
-      <span class="bg-blue-100 px-4 py-2 rounded-full text-blue-700 font-semibold">Python</span>
-      <span class="bg-blue-100 px-4 py-2 rounded-full text-blue-700 font-semibold">MySQL</span>
-      <span class="bg-blue-100 px-4 py-2 rounded-full text-blue-700 font-semibold">REST API</span>
-      <span class="bg-blue-100 px-4 py-2 rounded-full text-blue-700 font-semibold">AI/ML</span>
-    </div>
-    <p class="text-sm text-center text-gray-700">Certified in Python for Everybody, HTML5, Responsive Design & Google IT Support via Coursera</p>
-  </section>
-
-  <section id="contact" class="px-6 py-12 bg-blue-50 text-center">
-    <h3 class="text-3xl font-bold text-blue-600 mb-4">Contact Me</h3>
-    <p class="text-gray-700 mb-4">Let's connect to build something amazing!</p>
-    <div class="space-x-4 text-blue-600 font-medium">
-      <a href="mailto:vaishnavi.deshmukh201@gmail.com" class="hover:underline">Email</a>
-      <a href="https://github.com/vaishnavid07" target="_blank" class="hover:underline">GitHub</a>
-      <a href="https://www.linkedin.com/in/vaishnavi-deshmukh-352881212/" target="_blank" class="hover:underline">LinkedIn</a>
+  <!-- Projects -->
+  <section id="projects" class="py-20 bg-blue-50 px-4">
+    <div class="max-w-5xl mx-auto text-center">
+      <h3 class="text-3xl font-bold text-blue-600 mb-10">📁 Projects</h3>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="glass p-6 rounded-xl shadow-md fade-in">
+          <h4 class="text-xl font-semibold mb-2">DigiPark</h4>
+          <p class="text-sm text-gray-700">Digitized parking system with QR verification for contactless access. Led backend dev and team coordination.</p>
+          <p class="text-xs mt-2 text-gray-500">Tech: PHP, JS, HTML, MySQL</p>
+        </div>
+        <div class="glass p-6 rounded-xl shadow-md fade-in">
+          <h4 class="text-xl font-semibold mb-2">Brahmastra - No More Anonymity</h4>
+          <p class="text-sm text-gray-700">Network security tool detecting VPN/proxy usage and scanning ports. Built with Flask.</p>
+          <p class="text-xs mt-2 text-gray-500">Tech: Python, Flask, MySQL</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <footer class="text-center py-6 text-sm text-gray-500 bg-white">
+  <!-- Skills -->
+  <section id="skills" class="py-20 bg-white px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h3 class="text-3xl font-bold text-blue-600 mb-10">🛠️ Skills & Certifications</h3>
+      <div class="flex flex-wrap justify-center gap-3 mb-6">
+        <span class="bg-blue-100 px-4 py-2 rounded-full text-blue-700 font-semibold">PHP</span>
+        <span class="bg-blue-100 px-4 py-2 rounded-full text-blue-700 font-semibold">Laravel</span>
+        <span class="bg-blue-100 px-4 py-2 rounded-full text-blue-700 font-semibold">JavaScript</span>
+        <span class="bg-blue-100 px-4 py-2 rounded-full text-blue-700 font-semibold">Python</span>
+        <span class="bg-blue-100 px-4 py-2 rounded-full text-blue-700 font-semibold">MySQL</span>
+        <span class="bg-blue-100 px-4 py-2 rounded-full text-blue-700 font-semibold">REST API</span>
+        <span class="bg-blue-100 px-4 py-2 rounded-full text-blue-700 font-semibold">AI/ML</span>
+      </div>
+      <p class="text-sm text-gray-600">Certified in Python for Everybody, HTML5, Responsive Design, and Google IT Support via Coursera</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 bg-blue-50 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h3 class="text-3xl font-bold text-blue-600 mb-4">📬 Contact Me</h3>
+      <p class="text-gray-700 mb-6">Let's connect and build something amazing!</p>
+      <div class="flex justify-center space-x-6 text-blue-600 text-base font-medium">
+        <a href="mailto:vaishnavi.deshmukh201@gmail.com" class="hover:underline">Email</a>
+        <a href="https://github.com/vaishnavid07" target="_blank" class="hover:underline">GitHub</a>
+        <a href="https://www.linkedin.com/in/vaishnavi-deshmukh-352881212/" target="_blank" class="hover:underline">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white text-center py-6 text-sm text-gray-500">
     © 2025 Vaishnavi Gajanan Deshmukh
   </footer>
 
+  <!-- Fade-in Animation Script -->
   <script>
-    const fadeElements = document.querySelectorAll(".animate-fade");
-    window.addEventListener("scroll", () => {
-      fadeElements.forEach(el => {
+    const fadeEls = document.querySelectorAll(".fade-in");
+    const reveal = () => {
+      fadeEls.forEach(el => {
         const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight) {
-          el.classList.add("opacity-100", "translate-y-0");
+        if (rect.top < window.innerHeight - 50) {
+          el.classList.add("show");
         }
       });
-    });
+    };
+    window.addEventListener("scroll", reveal);
+    window.addEventListener("load", reveal);
   </script>
+
 </body>
 </html>
