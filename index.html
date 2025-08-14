@@ -1,185 +1,153 @@
+
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vaishnavi | Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/three@0.158.0/build/three.min.js"></script>
+  <script src="https://unpkg.com/three@0.158.0/examples/js/controls/OrbitControls.js"></script>
   <style>
+    :root {
+      --gradient: linear-gradient(45deg, #6a11cb, #2575fc);
+    }
     body {
-      background-color: #0f172a;
+      background: #0f172a;
       color: #f8fafc;
     }
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+    .text-gradient {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
-    .fade-in.show {
-      opacity: 1;
-      transform: translateY(0);
+    .card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-10px) rotate(-2deg);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
     }
   </style>
 </head>
 <body class="font-sans">
 
-  <!-- Header -->
-  <header class="sticky top-0 z-50 bg-transparent backdrop-blur-md">
-    <div class="max-w-7xl mx-auto flex items-center justify-between py-4 px-6">
-      <h1 class="text-xl font-bold bg-gradient-to-r from-indigo-400 to-blue-500 bg-clip-text text-transparent">
-        Vaishnavi D.
-      </h1>
-      <nav class="space-x-6 text-sm font-medium text-slate-300">
-        <a href="#projects" class="hover:text-indigo-400">Projects</a>
-        <a href="#experience" class="hover:text-indigo-400">Experience</a>
-        <a href="#skills" class="hover:text-indigo-400">Skills</a>
-        <a href="#contact" class="hover:text-indigo-400">Contact</a>
-      </nav>
-    </div>
-  </header>
+<!-- Particle Background -->
+<div id="particles"></div>
 
-  <!-- Hero Section -->
-  <section class="relative min-h-screen flex items-center justify-center text-center px-4 overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-indigo-900 via-slate-900 to-black opacity-80"></div>
-    <div class="absolute -top-40 -left-40 w-[600px] h-[600px] bg-indigo-500 rounded-full blur-3xl opacity-20"></div>
-    <div class="relative max-w-3xl">
-      <h2 class="text-5xl md:text-6xl font-extrabold mb-6 fade-in">
-        Hi, I'm <span class="bg-gradient-to-r from-indigo-400 to-blue-500 bg-clip-text text-transparent">Vaishnavi Deshmukh</span>
-      </h2>
-      <p class="text-lg text-slate-300 mb-4">Full Stack Developer | Laravel Enthusiast | AI/ML Explorer</p>
-      <p class="text-slate-400 max-w-xl mx-auto text-sm">
-        I blend creative problem-solving with full-stack development to build secure, scalable, and modern digital experiences.
+<!-- 3D Interactive Cube -->
+<div id="scene" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64">
+  <div id="cube" class="relative w-full h-full">
+    <!-- Add cube faces here -->
+  </div>
+</div>
+
+<!-- Header with Animated Nav -->
+<header class="sticky top-0 z-50 bg-transparent backdrop-blur-md">
+  <!-- ... keep existing header ... -->
+  <nav class="space-x-6 text-sm font-medium text-slate-300 flex items-center gap-4">
+    <!-- Add theme toggle -->
+    <button id="theme-toggle" class="p-2 rounded-full hover:bg-white/10">
+      🌓
+    </button>
+    <!-- ... existing nav links ... -->
+  </nav>
+</header>
+
+<!-- Hero Section with 3D Effect -->
+<section class="relative min-h-screen flex items-center justify-center text-center px-4 overflow-hidden">
+  <div class="relative max-w-3xl text-center">
+    <h2 class="text-5xl md:text-6xl font-extrabold mb-6 text-gradient">
+      Hi, I'm Vaishnavi Deshmukh
+    </h2>
+    <!-- Add floating animation -->
+    <div class="relative inline-block group">
+      <p class="text-lg text-slate-300 mb-4 animate-float">
+        Full Stack Developer
+        <span class="block text-sm text-slate-400">Laravel Enthusiast | AI/ML Explorer</span>
       </p>
-    </div>
-  </section>
-
-  <!-- Experience Section -->
-<!-- Experience Section -->
-<section id="experience" class="py-20 max-w-7xl mx-auto px-6">
-  <div class="grid md:grid-cols-2 gap-16 items-center">
-    <div class="fade-in">
-      <h3 class="text-3xl font-bold text-indigo-400 mb-6">🚀 Professional Experience</h3>
-      <div class="space-y-8">
-        <div>
-          <h4 class="text-xl font-semibold text-white">Techhomage Technologies</h4>
-          <p class="text-slate-400 text-sm">Nov 2024 – Present | Full Stack Developer</p>
-          <ul class="list-disc pl-5 mt-3 text-slate-300 text-sm space-y-1">
-            <li>Developed and maintained web applications using Laravel, Node.js, MVC architecture, REST API, and modern web technologies, with a strong focus on code updation, optimization, and performance improvement.</li>
-            <li>Collaborated with teams on various projects including a Food Delivery App, E-Commerce Website, ERP/CRM system for a manufacturing company, and a Hospital & Healthcare Management Portal. Also responsible for creating comprehensive documentation for all projects.</li>
-            <li>Conducted knowledge transfer sessions for onboarding team members.</li>
-            <li>Handled end-to-end project development lifecycle – from requirements gathering, system design, and development to deployment and post-deployment support, ensuring seamless delivery and long-term maintainability.</li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-xl font-semibold text-white">Clocktos Infotech</h4>
-          <p class="text-slate-400 text-sm">Feb 2023 – Aug 2023 | Web Development Intern</p>
-          <ul class="list-disc pl-5 mt-3 text-slate-300 text-sm space-y-1">
-            <li>Revamped Educational ERP system with HTML, CSS, JS, ASP.NET.</li>
-            <li>Created responsive designs and led onboarding sessions.</li>
-            <li>Documented development and design knowledge.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="fade-in flex justify-center">
-      <div class="w-full h-64 bg-gradient-to-br from-indigo-500 to-blue-500 rounded-xl opacity-60 blur-2xl"></div>
+      <div class="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-indigo-400 to-blue-500 rounded-full opacity-30 animate-pulse"></div>
     </div>
   </div>
 </section>
 
-<!-- Projects Section -->
+<!-- Projects Section with 3D Cards -->
 <section id="projects" class="py-20 bg-slate-900">
-  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-    <div class="fade-in">
-      <h3 class="text-3xl font-bold text-indigo-400 mb-6">📁 Projects</h3>
-      <div class="space-y-8">
-
-        <!-- Project 1 -->
-        <div>
-          <h4 class="text-xl font-semibold text-white">Import / PMS / Export – Real-Time Data Management</h4>
-          <p class="text-slate-300 text-sm">
-            Redesigned and optimized critical modules for real-time Import, Export, and Price Management System (PMS) using the latest Laravel framework. Implemented dynamic and interactive forms with role-based access control to streamline user operations. Integrated live data fetching and filtering to support business-critical decision-making. Enhanced pricing logic and added historical data tracking for improved responsiveness and auditability. Focused on performance tuning and code refactoring to ensure maintainability and scalability.
-          </p>
-        </div>
-
-        <!-- Project 2 -->
-        <div>
-          <h4 class="text-xl font-semibold text-white">Custom ERP/CRM System</h4>
-          <p class="text-slate-300 text-sm">
-            Developed scalable ERP/CRM with lead, quotation, order, inventory, invoicing, and role management. Enabled real-time updates and intuitive dashboards.
-          </p>
-        </div>
-
-        <!-- Project 3 -->
-        <div>
-          <h4 class="text-xl font-semibold text-white">Food Delivery App</h4>
-          <p class="text-slate-300 text-sm">
-            Created a responsive restaurant site with online menu and gallery. Emphasized clean UI, mobile-first design, and fast performance.
-          </p>
-        </div>
-
+  <div class="max-w-7xl mx-auto px-6">
+    <h3 class="text-3xl font-bold text-indigo-400 mb-12 text-center">📁 Projects</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Project Card with 3D effect -->
+      <div class="card-hover bg-slate-800 p-6 rounded-xl relative group">
+        <h4 class="text-xl font-semibold text-white mb-2">Import/PMS/Export System</h4>
+        <p class="text-slate-300 text-sm mb-4">Real-time data management system...</p>
+        <div class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
       </div>
-    </div>
-    <div class="fade-in flex justify-center">
-      <div class="w-full h-64 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-xl opacity-60 blur-2xl"></div>
+      <!-- Add more project cards -->
     </div>
   </div>
 </section>
 
-  <!-- Skills Section -->
-  <section id="skills" class="py-20 max-w-7xl mx-auto px-6">
-    <div class="grid md:grid-cols-2 gap-16 items-center">
-      <div class="fade-in">
-        <h3 class="text-3xl font-bold text-indigo-400 mb-6">🛠️ Skills & Certifications</h3>
-        <div class="flex flex-wrap gap-3 mb-6">
-          <span class="bg-indigo-900/50 px-4 py-2 rounded-full text-indigo-300 font-semibold">PHP</span>
-          <span class="bg-indigo-900/50 px-4 py-2 rounded-full text-indigo-300 font-semibold">Laravel</span>
-          <span class="bg-indigo-900/50 px-4 py-2 rounded-full text-indigo-300 font-semibold">JavaScript</span>
-          <span class="bg-indigo-900/50 px-4 py-2 rounded-full text-indigo-300 font-semibold">Python</span>
-          <span class="bg-indigo-900/50 px-4 py-2 rounded-full text-indigo-300 font-semibold">MySQL</span>
-          <span class="bg-indigo-900/50 px-4 py-2 rounded-full text-indigo-300 font-semibold">REST API</span>
-          <span class="bg-indigo-900/50 px-4 py-2 rounded-full text-indigo-300 font-semibold">AI/ML</span>
+<!-- Skills Section with Interactive Matrix -->
+<section id="skills" class="py-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <h3 class="text-3xl font-bold text-indigo-400 mb-12 text-center">🛠️ Skills Matrix</h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <!-- Skill Item with Progress Animation -->
+      <div class="bg-slate-800 p-6 rounded-xl relative">
+        <h4 class="text-indigo-400 mb-2">Laravel</h4>
+        <div class="h-2 bg-slate-700 rounded-full overflow-hidden">
+          <div class="w-3/4 h-full bg-gradient-to-r from-indigo-400 to-blue-500"></div>
         </div>
-        <p class="text-slate-400 text-sm">Certified in Python for Everybody, HTML5, Responsive Design, and Google IT Support via Coursera</p>
       </div>
-      <div class="fade-in flex justify-center">
-        <div class="w-full h-64 bg-gradient-to-br from-indigo-500 to-blue-500 rounded-xl opacity-60 blur-2xl"></div>
-      </div>
+      <!-- Add more skill items -->
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-20 bg-slate-900">
-    <div class="max-w-4xl mx-auto text-center fade-in">
-      <h3 class="text-3xl font-bold text-indigo-400 mb-4">📬 Contact Me</h3>
-      <p class="text-slate-300 mb-6">Let's connect and build something amazing!</p>
-      <div class="flex justify-center space-x-6 text-indigo-300 text-base font-medium">
-        <a href="mailto:vaishnavi.deshmukh201@gmail.com" class="hover:text-indigo-400">Email</a>
-        <a href="https://github.com/vaishnavid07" target="_blank" class="hover:text-indigo-400">GitHub</a>
-        <a href="https://www.linkedin.com/in/vaishnavi-deshmukh-352881212/" target="_blank" class="hover:text-indigo-400">LinkedIn</a>
-      </div>
-    </div>
-  </section>
+<script>
+// Theme Toggle
+const themeToggle = document.getElementById('theme-toggle');
+themeToggle.addEventListener('click', () => {
+  document.documentElement.classList.toggle('dark');
+});
 
-  <!-- Footer -->
-  <footer class="bg-slate-950 text-center py-6 text-sm text-slate-500">
-    © 2025 Vaishnavi Gajanan Deshmukh
-  </footer>
+// 3D Cube Animation
+const scene = document.getElementById('scene');
+const cube = document.getElementById('cube');
+const faces = ['front', 'back', 'left', 'right', 'top', 'bottom'];
 
-  <!-- Fade-in Animation Script -->
-  <script>
-    const fadeEls = document.querySelectorAll(".fade-in");
-    const reveal = () => {
-      fadeEls.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 50) {
-          el.classList.add("show");
-        }
-      });
-    };
-    window.addEventListener("scroll", reveal);
-    window.addEventListener("load", reveal);
-  </script>
+faces.forEach((face, index) => {
+  const div = document.createElement('div');
+  div.className = `absolute w-full h-full bg-center bg-no-repeat ${face}`;
+  div.style.backgroundImage = `url(skill-icons/${face}.svg)`;
+  cube.appendChild(div);
+});
+
+// Particle Animation
+function createParticles() {
+  const particles = document.getElementById('particles');
+  for (let i = 0; i < 50; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'absolute w-1 h-1 bg-blue-500 animate-float';
+    particle.style.left = Math.random() * 100 + '%';
+    particle.style.top = Math.random() * 100 + '%';
+    particles.appendChild(particle);
+  }
+}
+createParticles();
+
+// Smooth Scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+</script>
 
 </body>
 </html>
+ 
